@@ -1,5 +1,6 @@
 import express from 'express'
 import db from './config/db.js'
+import dotenv from 'dotenv'
 
 //Routes goes here
 import productRouter from './routes/productRouter.js'
@@ -10,6 +11,7 @@ import pass from './config/passport.js'
 
 const app = express()
 app.use(express.json())
+dotenv.config()
 
 db()
 

@@ -6,7 +6,7 @@ import User from '../models/userModel.js'
 var JwtStrategy = Strategy
 var opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = 'secret';
+opts.secretOrKey = process.env.SECRET;
 
 const pass = passport.use(new JwtStrategy(opts, async function (jwt_payload, done) {
     console.log(jwt_payload)
